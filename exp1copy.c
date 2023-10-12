@@ -5,7 +5,7 @@ void main()
 {
 	FILE *ptr;
 	char arr[100];
-	ptr =fopen("/home/student/Desktop/abhay/text.txt","w+");
+	ptr =fopen("/home/rajagiri/Desktop/abhay/text.txt","w+");
 	fprintf(ptr,"a=1-b+2;\nx=y+z;\np=t/u;");
 	fclose(ptr);
 
@@ -21,7 +21,7 @@ void main()
     
 	//fscanf(ptr,"%s",arr);
 	fclose(ptr);
-	printf("The expression is :%s",arr);
+	printf("The expression is :\n%s",arr);
 	printf("\n");
 	printf("Lexeme \tToken\t\tLineno\n");
 	int count=1;
@@ -49,4 +49,3 @@ void main()
 		}
 	}
 }
-
