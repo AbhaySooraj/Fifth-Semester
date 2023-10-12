@@ -1,28 +1,31 @@
 #include<stdio.h>
 #include<ctype.h>
-
+#include<stdlib.h>
 void main()
 {
 	FILE *ptr;
 	char arr[100];
 	ptr =fopen("/home/student/Desktop/abhay/text.txt","w+");
-	fprintf(ptr,"a=1-b+2;\nx=y+z;");
+	fprintf(ptr,"a=1-b+2;\nx=y+z;\np=t/u;");
 	fclose(ptr);
 
 	ptr =fopen("/home/student/Desktop/abhay/text.txt","r");
-        
-    for(int i=0;arr[i]!=EOF;i++)
+    int j=0;
+    do
     {
-    	arr[i]=fgetc(ptr);
-    
+    	arr[j]=fgetc(ptr);
+    	j++;
     }
+    while(arr[j-1]!=EOF);
+    
+    
 	//fscanf(ptr,"%s",arr);
 	fclose(ptr);
 	printf("The expression is :%s",arr);
 	printf("\n");
 	printf("Lexeme \tToken\t\tLineno\n");
 	int count=1;
-	for(int i=0;arr[i]!='\0';i++)
+	for(int i=0;arr[i]!=EOF;i++)
 	{
 		if (arr[i]=='+' ||arr[i]=='-' ||arr[i]=='*' ||arr[i]=='/' ||arr[i]=='%'||arr[i]=='=')
 		{
