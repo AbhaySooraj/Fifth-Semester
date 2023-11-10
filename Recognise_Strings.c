@@ -20,7 +20,6 @@ void main()
 				exit(0);
 			}
 			
-			
 			case 1:
 			{
 				c=input[i++];
@@ -62,7 +61,7 @@ void main()
 				}
 				else if(c=='b' && input[i]=='\0')
 				{
-					state=7;
+					state=6;
 				}
 				else
 				{
@@ -87,9 +86,10 @@ void main()
 					state=4;
 				}
 				break;
-			}
+			}			
 		}
 	}
+	
 	if(state==5)
 	{
 		printf("\n The string is recognised as a");
@@ -98,12 +98,4 @@ void main()
 	{
 		printf("\n The string is recognised as a*b+");
 	}
-	if(state==7)
-	{
-		printf("\n The string is recognised as abb");
-	}
-}
-				
-				
-				
-				
+}						
