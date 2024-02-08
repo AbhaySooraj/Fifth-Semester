@@ -16,6 +16,7 @@ testing_data<-soybean[splitIndex,]
 nb_model<- naiveBayes(Class ~ .,data=training_data)
 
 predictions<-predict(nb_model,testing_data)
+
 predictions<-as.factor(predictions)
 testing_data$Class<-as.factor(testing_data$Class)
 
