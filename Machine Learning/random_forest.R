@@ -1,7 +1,6 @@
 library(caret)
 library(e1071)
 
-
 soybean_df <- read.csv("C:\\Users\\abhay\\Desktop\\Main\\RAJAGIRI\\S5\\ML\\Soybean.csv")
 
 soybean<-na.omit(soybean_df)
