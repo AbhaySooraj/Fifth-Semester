@@ -9,5 +9,7 @@ bm<-gbm(Species ~.,data=iris,distribution="multinomial",n.trees=100,interaction.
 
 predictions<-predict(bm,newdata=iris,n.trees=100,type="response")
 
+pl<-apply(predictions,1,which.max)
+
 cm<-table(iris$Species,pl)
 cm
