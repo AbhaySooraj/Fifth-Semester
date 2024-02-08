@@ -1,14 +1,13 @@
-install.packages("gbm")
 library(gbm)
-
-data(iris)
+library(caret)
 
 iris$Species<-as.numeric(factor(iris$Species))
 
 set.seed(123)
 
 bm<-gbm(Species ~.,data=iris,distribution="multinomial",n.trees=100,interaction.depth=3,shrinkage=0.1)
+
 predictions<-predict(bm,newdata=iris,n.trees=100,type="response")
-pl<-apply(predictions,1,which.max)
+
 cm<-table(iris$Species,pl)
 cm
